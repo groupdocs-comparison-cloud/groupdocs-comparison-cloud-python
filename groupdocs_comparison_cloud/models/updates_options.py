@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="UpdatesOptions.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-from groupdocs_comparison_cloud.models import Options
+from groupdocs_comparison_cloud.models import ComparisonOptions
 
-class UpdatesOptions(Options):
+class UpdatesOptions(ComparisonOptions):
     """
     Comparison option class for updates endpoint
     """
@@ -71,7 +71,7 @@ class UpdatesOptions(Options):
         """
         Gets the changes.  # noqa: E501
 
-        Changes to apply or reject. Used only for Changes resourse (/comparison/updates)  # noqa: E501
+        Changes to apply or reject. Used only for updates resource (/comparison/updates)  # noqa: E501
 
         :return: The changes.  # noqa: E501
         :rtype: list[ChangeInfo]
@@ -83,7 +83,7 @@ class UpdatesOptions(Options):
         """
         Sets the changes.
 
-        Changes to apply or reject. Used only for Changes resourse (/comparison/updates)  # noqa: E501
+        Changes to apply or reject. Used only for updates resource (/comparison/updates)  # noqa: E501
 
         :param changes: The changes.  # noqa: E501
         :type: list[ChangeInfo]

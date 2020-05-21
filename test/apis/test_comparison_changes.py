@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,12 +64,12 @@ class TestComparisonChanges(TestContext):
     def test_changes_note(self):
         options = self.GetComparisonOptions(TestFiles.SourceNote, TestFiles.TargetNote)
         response = self.compare_api.post_changes(PostChangesRequest(options))
-        self.assertEqual(len(response), 8)   
+        self.assertEqual(len(response), 12)   
 
     def test_changes_note_protected(self):
         options = self.GetComparisonOptions(TestFiles.SourceNoteProtected, TestFiles.TargetNoteProtected)
         response = self.compare_api.post_changes(PostChangesRequest(options))
-        self.assertEqual(len(response), 8)          
+        self.assertEqual(len(response), 12)          
 
     def test_changes_pdf(self):
         options = self.GetComparisonOptions(TestFiles.SourcePdf, TestFiles.TargetPdf)
@@ -97,7 +97,7 @@ class TestComparisonChanges(TestContext):
         self.assertEqual(len(response), 14)                    
 
     def GetComparisonOptions(self, source, target):
-        options = Options()
+        options = ComparisonOptions()
         options.source_file = source.ToFileInfo()
         options.output_path = "/resultFilePath/" + source.file_name
         
@@ -107,11 +107,10 @@ class TestComparisonChanges(TestContext):
         options.settings.style_change_detection = True
         options.settings.use_frames_for_del_ins_elements = False
         options.settings.meta_data = None
-        options.settings.detail_level = "Low"
+        options.settings.details_level = "Low"
         options.settings.diagram_master_setting = None
         options.settings.calculate_component_coordinates = False
         options.settings.clone_metadata = "Default"
-        options.settings.mark_deleted_inserted_content_deep = False
         options.settings.password = "1111"
         options.settings.password_save_option = "User"
         
@@ -133,14 +132,14 @@ class TestComparisonChanges(TestContext):
         options.settings.inserted_items_style.italic = False
         options.settings.inserted_items_style.strike_through = False
         
-        options.settings.style_changed_items_style = ItemsStyle()
-        options.settings.style_changed_items_style.begin_separator_string = ""
-        options.settings.style_changed_items_style.end_separator_string = ""
-        options.settings.style_changed_items_style.font_color = "65280"
-        options.settings.style_changed_items_style.highlight_color = "65280"
-        options.settings.style_changed_items_style.bold = False
-        options.settings.style_changed_items_style.italic = False
-        options.settings.style_changed_items_style.strike_through = False
+        options.settings.changed_items_style = ItemsStyle()
+        options.settings.changed_items_style.begin_separator_string = ""
+        options.settings.changed_items_style.end_separator_string = ""
+        options.settings.changed_items_style.font_color = "65280"
+        options.settings.changed_items_style.highlight_color = "65280"
+        options.settings.changed_items_style.bold = False
+        options.settings.changed_items_style.italic = False
+        options.settings.changed_items_style.strike_through = False
       
         options.target_files = [target.ToFileInfo()]
 

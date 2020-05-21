@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,64 +39,62 @@ class TestComparisonUpdates(TestContext):
     def test_updates_cells(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourceCell, TestFiles.TargetCell)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_diagram(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourceDiagram, TestFiles.TargetDiagram)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_email(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourceEmail, TestFiles.TargetEmail)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
-
-    # Type casting bug, fixed in Comparison 19.4
+        self.assertEqual(response.rel, options.output_path)
     
-    # def test_updates_html(self):
-    #     options = self.GetComparisonOptionsUpdates(TestFiles.SourceHtml, TestFiles.TargetHtml)
-    #     response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-    #     self.assertEqual(response.href, options.output_path)
+    def test_updates_html(self):
+        options = self.GetComparisonOptionsUpdates(TestFiles.SourceHtml, TestFiles.TargetHtml)
+        response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
+        self.assertEqual(response.rel, options.output_path)
 
-    # def test_updates_image(self):
-    #     options = self.GetComparisonOptionsUpdates(TestFiles.SourceImage, TestFiles.TargetImage)
-    #     response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-    #     self.assertEqual(response.href, options.output_path)
+    def test_updates_image(self):
+        options = self.GetComparisonOptionsUpdates(TestFiles.SourceImage, TestFiles.TargetImage)
+        response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_note(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourceNote, TestFiles.TargetNote)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_note_protected(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourceNoteProtected, TestFiles.TargetNoteProtected)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_pdf(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourcePdf, TestFiles.TargetPdf)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_pdf_protected(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourcePdfProtected, TestFiles.TargetPdfProtected)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_text(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourceText, TestFiles.TargetText)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_word(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourceWord, TestFiles.TargetWord)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)
+        self.assertEqual(response.rel, options.output_path)
 
     def test_updates_word_protected(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourceWordProtected, TestFiles.TargetWordProtected)
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.href, options.output_path)   
+        self.assertEqual(response.rel, options.output_path)   
 
     def GetComparisonOptionsUpdates(self, source, target):
         options = UpdatesOptions()
@@ -109,7 +107,7 @@ class TestComparisonUpdates(TestContext):
         options.settings.style_change_detection = True
         options.settings.use_frames_for_del_ins_elements = False
         options.settings.meta_data = None
-        options.settings.detail_level = "Low"
+        options.settings.details_level = "Low"
         options.settings.diagram_master_setting = None
         options.settings.calculate_component_coordinates = False
         options.settings.clone_metadata = "Default"
@@ -135,14 +133,14 @@ class TestComparisonUpdates(TestContext):
         options.settings.inserted_items_style.italic = False
         options.settings.inserted_items_style.strike_through = False
         
-        options.settings.style_changed_items_style = ItemsStyle()
-        options.settings.style_changed_items_style.begin_separator_string = ""
-        options.settings.style_changed_items_style.end_separator_string = ""
-        options.settings.style_changed_items_style.font_color = "65280"
-        options.settings.style_changed_items_style.highlight_color = "65280"
-        options.settings.style_changed_items_style.bold = False
-        options.settings.style_changed_items_style.italic = False
-        options.settings.style_changed_items_style.strike_through = False
+        options.settings.changed_items_style = ItemsStyle()
+        options.settings.changed_items_style.begin_separator_string = ""
+        options.settings.changed_items_style.end_separator_string = ""
+        options.settings.changed_items_style.font_color = "65280"
+        options.settings.changed_items_style.highlight_color = "65280"
+        options.settings.changed_items_style.bold = False
+        options.settings.changed_items_style.italic = False
+        options.settings.changed_items_style.strike_through = False
       
         options.target_files = [target.ToFileInfo()]
 

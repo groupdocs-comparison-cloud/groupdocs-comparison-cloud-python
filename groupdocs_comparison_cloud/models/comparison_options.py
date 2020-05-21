@@ -1,8 +1,8 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="Options.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+# <copyright company="Aspose Pty Ltd" file="ComparisonOptions.py">
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import re  # noqa: F401
 
 import six
 
-class Options(object):
+class ComparisonOptions(object):
     """
     Defines comparison options
     """
@@ -46,6 +46,7 @@ class Options(object):
         'source_file': 'FileInfo',
         'target_files': 'list[FileInfo]',
         'settings': 'Settings',
+        'change_type': 'str',
         'output_path': 'str'
     }
 
@@ -53,15 +54,17 @@ class Options(object):
         'source_file': 'SourceFile',
         'target_files': 'TargetFiles',
         'settings': 'Settings',
+        'change_type': 'ChangeType',
         'output_path': 'OutputPath'
     }
 
-    def __init__(self, source_file=None, target_files=None, settings=None, output_path=None, **kwargs):  # noqa: E501
-        """Initializes new instance of Options"""  # noqa: E501
+    def __init__(self, source_file=None, target_files=None, settings=None, change_type=None, output_path=None, **kwargs):  # noqa: E501
+        """Initializes new instance of ComparisonOptions"""  # noqa: E501
 
         self._source_file = None
         self._target_files = None
         self._settings = None
+        self._change_type = None
         self._output_path = None
 
         if source_file is not None:
@@ -70,6 +73,8 @@ class Options(object):
             self.target_files = target_files
         if settings is not None:
             self.settings = settings
+        if change_type is not None:
+            self.change_type = change_type
         if output_path is not None:
             self.output_path = output_path
     
@@ -146,6 +151,40 @@ class Options(object):
         self._settings = settings
     
     @property
+    def change_type(self):
+        """
+        Gets the change_type.  # noqa: E501
+
+        Changes type. Used only for Changes resource(/comparison/changes)  # noqa: E501
+
+        :return: The change_type.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_type
+
+    @change_type.setter
+    def change_type(self, change_type):
+        """
+        Sets the change_type.
+
+        Changes type. Used only for Changes resource(/comparison/changes)  # noqa: E501
+
+        :param change_type: The change_type.  # noqa: E501
+        :type: str
+        """
+        if change_type is None:
+            raise ValueError("Invalid value for `change_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["None", "Modified", "Inserted", "Deleted", "Added", "NotModified", "StyleChanged", "Resized", "Moved", "MovedAndResized", "ShiftedAndResized"]  # noqa: E501
+        if not change_type.isdigit():	
+            if change_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `change_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(change_type, allowed_values))
+            self._change_type = change_type
+        else:
+            self._change_type = allowed_values[int(change_type) if six.PY3 else long(change_type)]
+    
+    @property
     def output_path(self):
         """
         Gets the output_path.  # noqa: E501
@@ -203,7 +242,7 @@ class Options(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Options):
+        if not isinstance(other, ComparisonOptions):
             return False
 
         return self.__dict__ == other.__dict__

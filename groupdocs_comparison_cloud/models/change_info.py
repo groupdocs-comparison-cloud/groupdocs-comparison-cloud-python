@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="ChangeInfo.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,43 +45,58 @@ class ChangeInfo(object):
     swagger_types = {
         'id': 'int',
         'comparison_action': 'str',
-        'comparison_type_changed': 'str',
+        'type': 'str',
         'text': 'str',
+        'target_text': 'str',
         'authors': 'list[str]',
-        'style_change_info': 'list[StyleChangeInfo]'
+        'style_change_info': 'list[StyleChangeInfo]',
+        'page_info': 'PageInfo',
+        'box': 'Rectangle'
     }
 
     attribute_map = {
         'id': 'Id',
         'comparison_action': 'ComparisonAction',
-        'comparison_type_changed': 'ComparisonTypeChanged',
+        'type': 'Type',
         'text': 'Text',
+        'target_text': 'TargetText',
         'authors': 'Authors',
-        'style_change_info': 'StyleChangeInfo'
+        'style_change_info': 'StyleChangeInfo',
+        'page_info': 'PageInfo',
+        'box': 'Box'
     }
 
-    def __init__(self, id=None, comparison_action=None, comparison_type_changed=None, text=None, authors=None, style_change_info=None, **kwargs):  # noqa: E501
+    def __init__(self, id=None, comparison_action=None, type=None, text=None, target_text=None, authors=None, style_change_info=None, page_info=None, box=None, **kwargs):  # noqa: E501
         """Initializes new instance of ChangeInfo"""  # noqa: E501
 
         self._id = None
         self._comparison_action = None
-        self._comparison_type_changed = None
+        self._type = None
         self._text = None
+        self._target_text = None
         self._authors = None
         self._style_change_info = None
+        self._page_info = None
+        self._box = None
 
         if id is not None:
             self.id = id
         if comparison_action is not None:
             self.comparison_action = comparison_action
-        if comparison_type_changed is not None:
-            self.comparison_type_changed = comparison_type_changed
+        if type is not None:
+            self.type = type
         if text is not None:
             self.text = text
+        if target_text is not None:
+            self.target_text = target_text
         if authors is not None:
             self.authors = authors
         if style_change_info is not None:
             self.style_change_info = style_change_info
+        if page_info is not None:
+            self.page_info = page_info
+        if box is not None:
+            self.box = box
     
     @property
     def id(self):
@@ -131,31 +146,51 @@ class ChangeInfo(object):
         :param comparison_action: The comparison_action.  # noqa: E501
         :type: str
         """
-        self._comparison_action = comparison_action
+        if comparison_action is None:
+            raise ValueError("Invalid value for `comparison_action`, must not be `None`")  # noqa: E501
+        allowed_values = ["None", "Accept", "Reject"]  # noqa: E501
+        if not comparison_action.isdigit():	
+            if comparison_action not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `comparison_action` ({0}), must be one of {1}"  # noqa: E501
+                    .format(comparison_action, allowed_values))
+            self._comparison_action = comparison_action
+        else:
+            self._comparison_action = allowed_values[int(comparison_action) if six.PY3 else long(comparison_action)]
     
     @property
-    def comparison_type_changed(self):
+    def type(self):
         """
-        Gets the comparison_type_changed.  # noqa: E501
+        Gets the type.  # noqa: E501
 
         Type of change (Inserted, Deleted or StyleChanged)  # noqa: E501
 
-        :return: The comparison_type_changed.  # noqa: E501
+        :return: The type.  # noqa: E501
         :rtype: str
         """
-        return self._comparison_type_changed
+        return self._type
 
-    @comparison_type_changed.setter
-    def comparison_type_changed(self, comparison_type_changed):
+    @type.setter
+    def type(self, type):
         """
-        Sets the comparison_type_changed.
+        Sets the type.
 
         Type of change (Inserted, Deleted or StyleChanged)  # noqa: E501
 
-        :param comparison_type_changed: The comparison_type_changed.  # noqa: E501
+        :param type: The type.  # noqa: E501
         :type: str
         """
-        self._comparison_type_changed = comparison_type_changed
+        if type is None:
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+        allowed_values = ["None", "Modified", "Inserted", "Deleted", "Added", "NotModified", "StyleChanged", "Resized", "Moved", "MovedAndResized", "ShiftedAndResized"]  # noqa: E501
+        if not type.isdigit():	
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values))
+            self._type = type
+        else:
+            self._type = allowed_values[int(type) if six.PY3 else long(type)]
     
     @property
     def text(self):
@@ -180,6 +215,30 @@ class ChangeInfo(object):
         :type: str
         """
         self._text = text
+    
+    @property
+    def target_text(self):
+        """
+        Gets the target_text.  # noqa: E501
+
+        Changed text of target doc  # noqa: E501
+
+        :return: The target_text.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_text
+
+    @target_text.setter
+    def target_text(self, target_text):
+        """
+        Sets the target_text.
+
+        Changed text of target doc  # noqa: E501
+
+        :param target_text: The target_text.  # noqa: E501
+        :type: str
+        """
+        self._target_text = target_text
     
     @property
     def authors(self):
@@ -228,6 +287,56 @@ class ChangeInfo(object):
         :type: list[StyleChangeInfo]
         """
         self._style_change_info = style_change_info
+    
+    @property
+    def page_info(self):
+        """
+        Gets the page_info.  # noqa: E501
+
+        Page where current change is placed  # noqa: E501
+
+        :return: The page_info.  # noqa: E501
+        :rtype: PageInfo
+        """
+        return self._page_info
+
+    @page_info.setter
+    def page_info(self, page_info):
+        """
+        Sets the page_info.
+
+        Page where current change is placed  # noqa: E501
+
+        :param page_info: The page_info.  # noqa: E501
+        :type: PageInfo
+        """
+        self._page_info = page_info
+    
+    @property
+    def box(self):
+        """
+        Gets the box.  # noqa: E501
+
+        Coordinates of changed element  # noqa: E501
+
+        :return: The box.  # noqa: E501
+        :rtype: Rectangle
+        """
+        return self._box
+
+    @box.setter
+    def box(self, box):
+        """
+        Sets the box.
+
+        Coordinates of changed element  # noqa: E501
+
+        :param box: The box.  # noqa: E501
+        :type: Rectangle
+        """
+        if box is None:
+            raise ValueError("Invalid value for `box`, must not be `None`")  # noqa: E501
+        self._box = box
 
     def to_dict(self):
         """Returns the model properties as a dict"""

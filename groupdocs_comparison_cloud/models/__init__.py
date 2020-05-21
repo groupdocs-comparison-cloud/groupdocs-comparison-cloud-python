@@ -5,6 +5,7 @@ from __future__ import absolute_import
 
 # import models
 from groupdocs_comparison_cloud.models.change_info import ChangeInfo
+from groupdocs_comparison_cloud.models.comparison_options import ComparisonOptions
 from groupdocs_comparison_cloud.models.diagram_master_setting import DiagramMasterSetting
 from groupdocs_comparison_cloud.models.disc_usage import DiscUsage
 from groupdocs_comparison_cloud.models.error import Error
@@ -15,13 +16,15 @@ from groupdocs_comparison_cloud.models.files_list import FilesList
 from groupdocs_comparison_cloud.models.files_upload_result import FilesUploadResult
 from groupdocs_comparison_cloud.models.format import Format
 from groupdocs_comparison_cloud.models.formats_result import FormatsResult
+from groupdocs_comparison_cloud.models.info_result import InfoResult
 from groupdocs_comparison_cloud.models.items_style import ItemsStyle
 from groupdocs_comparison_cloud.models.link import Link
 from groupdocs_comparison_cloud.models.metadata import Metadata
 from groupdocs_comparison_cloud.models.object_exist import ObjectExist
-from groupdocs_comparison_cloud.models.options import Options
-from groupdocs_comparison_cloud.models.original_size import OriginalSize
+from groupdocs_comparison_cloud.models.page_info import PageInfo
+from groupdocs_comparison_cloud.models.rectangle import Rectangle
 from groupdocs_comparison_cloud.models.settings import Settings
+from groupdocs_comparison_cloud.models.size import Size
 from groupdocs_comparison_cloud.models.storage_exist import StorageExist
 from groupdocs_comparison_cloud.models.storage_file import StorageFile
 from groupdocs_comparison_cloud.models.style_change_info import StyleChangeInfo

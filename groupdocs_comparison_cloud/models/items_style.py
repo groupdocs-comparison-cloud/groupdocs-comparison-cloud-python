@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="ItemsStyle.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,7 +49,8 @@ class ItemsStyle(object):
         'end_separator_string': 'str',
         'bold': 'bool',
         'italic': 'bool',
-        'strike_through': 'bool'
+        'strike_through': 'bool',
+        'underline': 'bool'
     }
 
     attribute_map = {
@@ -59,10 +60,11 @@ class ItemsStyle(object):
         'end_separator_string': 'EndSeparatorString',
         'bold': 'Bold',
         'italic': 'Italic',
-        'strike_through': 'StrikeThrough'
+        'strike_through': 'StrikeThrough',
+        'underline': 'Underline'
     }
 
-    def __init__(self, font_color=None, highlight_color=None, begin_separator_string=None, end_separator_string=None, bold=None, italic=None, strike_through=None, **kwargs):  # noqa: E501
+    def __init__(self, font_color=None, highlight_color=None, begin_separator_string=None, end_separator_string=None, bold=None, italic=None, strike_through=None, underline=None, **kwargs):  # noqa: E501
         """Initializes new instance of ItemsStyle"""  # noqa: E501
 
         self._font_color = None
@@ -72,6 +74,7 @@ class ItemsStyle(object):
         self._bold = None
         self._italic = None
         self._strike_through = None
+        self._underline = None
 
         if font_color is not None:
             self.font_color = font_color
@@ -87,6 +90,8 @@ class ItemsStyle(object):
             self.italic = italic
         if strike_through is not None:
             self.strike_through = strike_through
+        if underline is not None:
+            self.underline = underline
     
     @property
     def font_color(self):
@@ -241,7 +246,7 @@ class ItemsStyle(object):
         """
         Gets the strike_through.  # noqa: E501
 
-        Strikethrough style for changed components  # noqa: E501
+        Strike through style for changed components  # noqa: E501
 
         :return: The strike_through.  # noqa: E501
         :rtype: bool
@@ -253,7 +258,7 @@ class ItemsStyle(object):
         """
         Sets the strike_through.
 
-        Strikethrough style for changed components  # noqa: E501
+        Strike through style for changed components  # noqa: E501
 
         :param strike_through: The strike_through.  # noqa: E501
         :type: bool
@@ -261,6 +266,32 @@ class ItemsStyle(object):
         if strike_through is None:
             raise ValueError("Invalid value for `strike_through`, must not be `None`")  # noqa: E501
         self._strike_through = strike_through
+    
+    @property
+    def underline(self):
+        """
+        Gets the underline.  # noqa: E501
+
+        Underline style for changed components  # noqa: E501
+
+        :return: The underline.  # noqa: E501
+        :rtype: bool
+        """
+        return self._underline
+
+    @underline.setter
+    def underline(self, underline):
+        """
+        Sets the underline.
+
+        Underline style for changed components  # noqa: E501
+
+        :param underline: The underline.  # noqa: E501
+        :type: bool
+        """
+        if underline is None:
+            raise ValueError("Invalid value for `underline`, must not be `None`")  # noqa: E501
+        self._underline = underline
 
     def to_dict(self):
         """Returns the model properties as a dict"""

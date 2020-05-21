@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="StorageExist.py">
+# <copyright company="Aspose Pty Ltd" file="Size.py">
 #   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class StorageExist(object):
+class Size(object):
     """
-    Storage exists
+    Item size
     """
 
     """
@@ -43,46 +43,77 @@ class StorageExist(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'exists': 'bool'
+        'width': 'int',
+        'height': 'int'
     }
 
     attribute_map = {
-        'exists': 'Exists'
+        'width': 'Width',
+        'height': 'Height'
     }
 
-    def __init__(self, exists=None, **kwargs):  # noqa: E501
-        """Initializes new instance of StorageExist"""  # noqa: E501
+    def __init__(self, width=None, height=None, **kwargs):  # noqa: E501
+        """Initializes new instance of Size"""  # noqa: E501
 
-        self._exists = None
+        self._width = None
+        self._height = None
 
-        if exists is not None:
-            self.exists = exists
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
     
     @property
-    def exists(self):
+    def width(self):
         """
-        Gets the exists.  # noqa: E501
+        Gets the width.  # noqa: E501
 
-        Shows that the storage exists.               # noqa: E501
+        Width of item  # noqa: E501
 
-        :return: The exists.  # noqa: E501
-        :rtype: bool
+        :return: The width.  # noqa: E501
+        :rtype: int
         """
-        return self._exists
+        return self._width
 
-    @exists.setter
-    def exists(self, exists):
+    @width.setter
+    def width(self, width):
         """
-        Sets the exists.
+        Sets the width.
 
-        Shows that the storage exists.               # noqa: E501
+        Width of item  # noqa: E501
 
-        :param exists: The exists.  # noqa: E501
-        :type: bool
+        :param width: The width.  # noqa: E501
+        :type: int
         """
-        if exists is None:
-            raise ValueError("Invalid value for `exists`, must not be `None`")  # noqa: E501
-        self._exists = exists
+        if width is None:
+            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
+        self._width = width
+    
+    @property
+    def height(self):
+        """
+        Gets the height.  # noqa: E501
+
+        Height of item  # noqa: E501
+
+        :return: The height.  # noqa: E501
+        :rtype: int
+        """
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        """
+        Sets the height.
+
+        Height of item  # noqa: E501
+
+        :param height: The height.  # noqa: E501
+        :type: int
+        """
+        if height is None:
+            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
+        self._height = height
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -118,7 +149,7 @@ class StorageExist(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, StorageExist):
+        if not isinstance(other, Size):
             return False
 
         return self.__dict__ == other.__dict__

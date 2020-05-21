@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="DiagramMasterSetting.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,34 +44,24 @@ class DiagramMasterSetting(object):
     """
     swagger_types = {
         'master_path': 'str',
-        'use_source_master': 'bool',
-        'width': 'int',
-        'height': 'int'
+        'use_source_master': 'bool'
     }
 
     attribute_map = {
         'master_path': 'MasterPath',
-        'use_source_master': 'UseSourceMaster',
-        'width': 'Width',
-        'height': 'Height'
+        'use_source_master': 'UseSourceMaster'
     }
 
-    def __init__(self, master_path=None, use_source_master=None, width=None, height=None, **kwargs):  # noqa: E501
+    def __init__(self, master_path=None, use_source_master=None, **kwargs):  # noqa: E501
         """Initializes new instance of DiagramMasterSetting"""  # noqa: E501
 
         self._master_path = None
         self._use_source_master = None
-        self._width = None
-        self._height = None
 
         if master_path is not None:
             self.master_path = master_path
         if use_source_master is not None:
             self.use_source_master = use_source_master
-        if width is not None:
-            self.width = width
-        if height is not None:
-            self.height = height
     
     @property
     def master_path(self):
@@ -122,58 +112,6 @@ class DiagramMasterSetting(object):
         if use_source_master is None:
             raise ValueError("Invalid value for `use_source_master`, must not be `None`")  # noqa: E501
         self._use_source_master = use_source_master
-    
-    @property
-    def width(self):
-        """
-        Gets the width.  # noqa: E501
-
-        Width of original document  # noqa: E501
-
-        :return: The width.  # noqa: E501
-        :rtype: int
-        """
-        return self._width
-
-    @width.setter
-    def width(self, width):
-        """
-        Sets the width.
-
-        Width of original document  # noqa: E501
-
-        :param width: The width.  # noqa: E501
-        :type: int
-        """
-        if width is None:
-            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
-        self._width = width
-    
-    @property
-    def height(self):
-        """
-        Gets the height.  # noqa: E501
-
-        Height of original document  # noqa: E501
-
-        :return: The height.  # noqa: E501
-        :rtype: int
-        """
-        return self._height
-
-    @height.setter
-    def height(self, height):
-        """
-        Sets the height.
-
-        Height of original document  # noqa: E501
-
-        :param height: The height.  # noqa: E501
-        :type: int
-        """
-        if height is None:
-            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
-        self._height = height
 
     def to_dict(self):
         """Returns the model properties as a dict"""

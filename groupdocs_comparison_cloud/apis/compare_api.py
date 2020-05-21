@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="comparison_api.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -90,7 +90,7 @@ class CompareApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param Options comparison_options: Comparison options (required)
+        :param ComparisonOptions comparison_options: Comparison options (required)
         :return: Link
                  If the method is called asynchronously,
                  returns the request thread.
@@ -181,7 +181,7 @@ class CompareApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param Options comparison_options: Comparison options (required)
+        :param ComparisonOptions comparison_options: Comparison options (required)
         :return: list[ChangeInfo]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -272,7 +272,7 @@ class CompareApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param UpdatesOptions comparison_options: Comparison options (required)
+        :param UpdatesOptions updates_options: Comparison options (required)
         :return: Link
                  If the method is called asynchronously,
                  returns the request thread.
@@ -310,9 +310,9 @@ class CompareApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'comparison_options' is set
-        if request.comparison_options is None:
-            raise ValueError("Missing the required parameter `comparison_options` when calling `put_changes_document`")  # noqa: E501
+        # verify the required parameter 'updates_options' is set
+        if request.updates_options is None:
+            raise ValueError("Missing the required parameter `updates_options` when calling `put_changes_document`")  # noqa: E501
 
         collection_formats = {}
         path = '/comparison/updates'
@@ -326,8 +326,8 @@ class CompareApi(object):
         local_var_files = []
 
         body_params = None
-        if request.comparison_options is not None:
-            body_params = request.comparison_options
+        if request.updates_options is not None:
+            body_params = request.updates_options
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -366,7 +366,7 @@ class CompareApi(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="comparisons_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -402,7 +402,7 @@ class ComparisonsRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="post_changes_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -438,7 +438,7 @@ class PostChangesRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="put_changes_document_request.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -464,9 +464,9 @@ class PostChangesRequest(object):
 class PutChangesDocumentRequest(object):
     """
     Request model for put_changes_document operation.
-    :param comparison_options Comparison options
+    :param updates_options Comparison options
     """
 
-    def __init__(self, comparison_options):
+    def __init__(self, updates_options):
         """Initializes new instance of PutChangesDocumentRequest."""  # noqa: E501
-        self.comparison_options = comparison_options
+        self.updates_options = updates_options

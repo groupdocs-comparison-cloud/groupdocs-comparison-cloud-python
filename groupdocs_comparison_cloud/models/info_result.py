@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="StorageExist.py">
+# <copyright company="Aspose Pty Ltd" file="InfoResult.py">
 #   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class StorageExist(object):
+class InfoResult(object):
     """
-    Storage exists
+    Represents document information
     """
 
     """
@@ -43,46 +43,135 @@ class StorageExist(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'exists': 'bool'
+        'format': 'str',
+        'extension': 'str',
+        'size': 'int',
+        'page_count': 'int'
     }
 
     attribute_map = {
-        'exists': 'Exists'
+        'format': 'Format',
+        'extension': 'Extension',
+        'size': 'Size',
+        'page_count': 'PageCount'
     }
 
-    def __init__(self, exists=None, **kwargs):  # noqa: E501
-        """Initializes new instance of StorageExist"""  # noqa: E501
+    def __init__(self, format=None, extension=None, size=None, page_count=None, **kwargs):  # noqa: E501
+        """Initializes new instance of InfoResult"""  # noqa: E501
 
-        self._exists = None
+        self._format = None
+        self._extension = None
+        self._size = None
+        self._page_count = None
 
-        if exists is not None:
-            self.exists = exists
+        if format is not None:
+            self.format = format
+        if extension is not None:
+            self.extension = extension
+        if size is not None:
+            self.size = size
+        if page_count is not None:
+            self.page_count = page_count
     
     @property
-    def exists(self):
+    def format(self):
         """
-        Gets the exists.  # noqa: E501
+        Gets the format.  # noqa: E501
 
-        Shows that the storage exists.               # noqa: E501
+        Document format  # noqa: E501
 
-        :return: The exists.  # noqa: E501
-        :rtype: bool
+        :return: The format.  # noqa: E501
+        :rtype: str
         """
-        return self._exists
+        return self._format
 
-    @exists.setter
-    def exists(self, exists):
+    @format.setter
+    def format(self, format):
         """
-        Sets the exists.
+        Sets the format.
 
-        Shows that the storage exists.               # noqa: E501
+        Document format  # noqa: E501
 
-        :param exists: The exists.  # noqa: E501
-        :type: bool
+        :param format: The format.  # noqa: E501
+        :type: str
         """
-        if exists is None:
-            raise ValueError("Invalid value for `exists`, must not be `None`")  # noqa: E501
-        self._exists = exists
+        self._format = format
+    
+    @property
+    def extension(self):
+        """
+        Gets the extension.  # noqa: E501
+
+        Document file extension  # noqa: E501
+
+        :return: The extension.  # noqa: E501
+        :rtype: str
+        """
+        return self._extension
+
+    @extension.setter
+    def extension(self, extension):
+        """
+        Sets the extension.
+
+        Document file extension  # noqa: E501
+
+        :param extension: The extension.  # noqa: E501
+        :type: str
+        """
+        self._extension = extension
+    
+    @property
+    def size(self):
+        """
+        Gets the size.  # noqa: E501
+
+        Document file size  # noqa: E501
+
+        :return: The size.  # noqa: E501
+        :rtype: int
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """
+        Sets the size.
+
+        Document file size  # noqa: E501
+
+        :param size: The size.  # noqa: E501
+        :type: int
+        """
+        if size is None:
+            raise ValueError("Invalid value for `size`, must not be `None`")  # noqa: E501
+        self._size = size
+    
+    @property
+    def page_count(self):
+        """
+        Gets the page_count.  # noqa: E501
+
+        Pages count  # noqa: E501
+
+        :return: The page_count.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """
+        Sets the page_count.
+
+        Pages count  # noqa: E501
+
+        :param page_count: The page_count.  # noqa: E501
+        :type: int
+        """
+        if page_count is None:
+            raise ValueError("Invalid value for `page_count`, must not be `None`")  # noqa: E501
+        self._page_count = page_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -118,7 +207,7 @@ class StorageExist(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, StorageExist):
+        if not isinstance(other, InfoResult):
             return False
 
         return self.__dict__ == other.__dict__

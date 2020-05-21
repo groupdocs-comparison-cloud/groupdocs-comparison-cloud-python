@@ -1,8 +1,8 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="OriginalSize.py">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+# <copyright company="Aspose Pty Ltd" file="PageInfo.py">
+#   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class OriginalSize(object):
+class PageInfo(object):
     """
-    OriginalSize Object fields
+    Represents information about page
     """
 
     """
@@ -44,31 +44,36 @@ class OriginalSize(object):
     """
     swagger_types = {
         'width': 'int',
-        'height': 'int'
+        'height': 'int',
+        'page_number': 'int'
     }
 
     attribute_map = {
         'width': 'Width',
-        'height': 'Height'
+        'height': 'Height',
+        'page_number': 'PageNumber'
     }
 
-    def __init__(self, width=None, height=None, **kwargs):  # noqa: E501
-        """Initializes new instance of OriginalSize"""  # noqa: E501
+    def __init__(self, width=None, height=None, page_number=None, **kwargs):  # noqa: E501
+        """Initializes new instance of PageInfo"""  # noqa: E501
 
         self._width = None
         self._height = None
+        self._page_number = None
 
         if width is not None:
             self.width = width
         if height is not None:
             self.height = height
+        if page_number is not None:
+            self.page_number = page_number
     
     @property
     def width(self):
         """
         Gets the width.  # noqa: E501
 
-        Width of original document  # noqa: E501
+        Page width  # noqa: E501
 
         :return: The width.  # noqa: E501
         :rtype: int
@@ -80,7 +85,7 @@ class OriginalSize(object):
         """
         Sets the width.
 
-        Width of original document  # noqa: E501
+        Page width  # noqa: E501
 
         :param width: The width.  # noqa: E501
         :type: int
@@ -94,7 +99,7 @@ class OriginalSize(object):
         """
         Gets the height.  # noqa: E501
 
-        Height of original document  # noqa: E501
+        Page height  # noqa: E501
 
         :return: The height.  # noqa: E501
         :rtype: int
@@ -106,7 +111,7 @@ class OriginalSize(object):
         """
         Sets the height.
 
-        Height of original document  # noqa: E501
+        Page height  # noqa: E501
 
         :param height: The height.  # noqa: E501
         :type: int
@@ -114,6 +119,32 @@ class OriginalSize(object):
         if height is None:
             raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
         self._height = height
+    
+    @property
+    def page_number(self):
+        """
+        Gets the page_number.  # noqa: E501
+
+        Page number  # noqa: E501
+
+        :return: The page_number.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number):
+        """
+        Sets the page_number.
+
+        Page number  # noqa: E501
+
+        :param page_number: The page_number.  # noqa: E501
+        :type: int
+        """
+        if page_number is None:
+            raise ValueError("Invalid value for `page_number`, must not be `None`")  # noqa: E501
+        self._page_number = page_number
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -149,7 +180,7 @@ class OriginalSize(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, OriginalSize):
+        if not isinstance(other, PageInfo):
             return False
 
         return self.__dict__ == other.__dict__

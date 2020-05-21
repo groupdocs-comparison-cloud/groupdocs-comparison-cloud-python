@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="StorageExist.py">
+# <copyright company="Aspose Pty Ltd" file="Rectangle.py">
 #   Copyright (c) 2003-2020 Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class StorageExist(object):
+class Rectangle(object):
     """
-    Storage exists
+    Rectangle model
     """
 
     """
@@ -43,46 +43,139 @@ class StorageExist(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'exists': 'bool'
+        'height': 'float',
+        'width': 'float',
+        'x': 'float',
+        'y': 'float'
     }
 
     attribute_map = {
-        'exists': 'Exists'
+        'height': 'Height',
+        'width': 'Width',
+        'x': 'X',
+        'y': 'Y'
     }
 
-    def __init__(self, exists=None, **kwargs):  # noqa: E501
-        """Initializes new instance of StorageExist"""  # noqa: E501
+    def __init__(self, height=None, width=None, x=None, y=None, **kwargs):  # noqa: E501
+        """Initializes new instance of Rectangle"""  # noqa: E501
 
-        self._exists = None
+        self._height = None
+        self._width = None
+        self._x = None
+        self._y = None
 
-        if exists is not None:
-            self.exists = exists
+        if height is not None:
+            self.height = height
+        if width is not None:
+            self.width = width
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
     
     @property
-    def exists(self):
+    def height(self):
         """
-        Gets the exists.  # noqa: E501
+        Gets the height.  # noqa: E501
 
-        Shows that the storage exists.               # noqa: E501
+        Height  # noqa: E501
 
-        :return: The exists.  # noqa: E501
-        :rtype: bool
+        :return: The height.  # noqa: E501
+        :rtype: float
         """
-        return self._exists
+        return self._height
 
-    @exists.setter
-    def exists(self, exists):
+    @height.setter
+    def height(self, height):
         """
-        Sets the exists.
+        Sets the height.
 
-        Shows that the storage exists.               # noqa: E501
+        Height  # noqa: E501
 
-        :param exists: The exists.  # noqa: E501
-        :type: bool
+        :param height: The height.  # noqa: E501
+        :type: float
         """
-        if exists is None:
-            raise ValueError("Invalid value for `exists`, must not be `None`")  # noqa: E501
-        self._exists = exists
+        if height is None:
+            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
+        self._height = height
+    
+    @property
+    def width(self):
+        """
+        Gets the width.  # noqa: E501
+
+        Width  # noqa: E501
+
+        :return: The width.  # noqa: E501
+        :rtype: float
+        """
+        return self._width
+
+    @width.setter
+    def width(self, width):
+        """
+        Sets the width.
+
+        Width  # noqa: E501
+
+        :param width: The width.  # noqa: E501
+        :type: float
+        """
+        if width is None:
+            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
+        self._width = width
+    
+    @property
+    def x(self):
+        """
+        Gets the x.  # noqa: E501
+
+        X coordinate  # noqa: E501
+
+        :return: The x.  # noqa: E501
+        :rtype: float
+        """
+        return self._x
+
+    @x.setter
+    def x(self, x):
+        """
+        Sets the x.
+
+        X coordinate  # noqa: E501
+
+        :param x: The x.  # noqa: E501
+        :type: float
+        """
+        if x is None:
+            raise ValueError("Invalid value for `x`, must not be `None`")  # noqa: E501
+        self._x = x
+    
+    @property
+    def y(self):
+        """
+        Gets the y.  # noqa: E501
+
+        Y coordinate  # noqa: E501
+
+        :return: The y.  # noqa: E501
+        :rtype: float
+        """
+        return self._y
+
+    @y.setter
+    def y(self, y):
+        """
+        Sets the y.
+
+        Y coordinate  # noqa: E501
+
+        :param y: The y.  # noqa: E501
+        :type: float
+        """
+        if y is None:
+            raise ValueError("Invalid value for `y`, must not be `None`")  # noqa: E501
+        self._y = y
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -118,7 +211,7 @@ class StorageExist(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, StorageExist):
+        if not isinstance(other, Rectangle):
             return False
 
         return self.__dict__ == other.__dict__
