@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="ApplyRevisionsOptions.py">
-#   Copyright (c) 2003-2020 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,26 +45,36 @@ class ApplyRevisionsOptions(object):
     swagger_types = {
         'source_file': 'FileInfo',
         'revisions': 'list[RevisionInfo]',
+        'accept_all': 'bool',
+        'reject_all': 'bool',
         'output_path': 'str'
     }
 
     attribute_map = {
         'source_file': 'SourceFile',
         'revisions': 'Revisions',
+        'accept_all': 'AcceptAll',
+        'reject_all': 'RejectAll',
         'output_path': 'OutputPath'
     }
 
-    def __init__(self, source_file=None, revisions=None, output_path=None, **kwargs):  # noqa: E501
+    def __init__(self, source_file=None, revisions=None, accept_all=None, reject_all=None, output_path=None, **kwargs):  # noqa: E501
         """Initializes new instance of ApplyRevisionsOptions"""  # noqa: E501
 
         self._source_file = None
         self._revisions = None
+        self._accept_all = None
+        self._reject_all = None
         self._output_path = None
 
         if source_file is not None:
             self.source_file = source_file
         if revisions is not None:
             self.revisions = revisions
+        if accept_all is not None:
+            self.accept_all = accept_all
+        if reject_all is not None:
+            self.reject_all = reject_all
         if output_path is not None:
             self.output_path = output_path
     
@@ -115,6 +125,58 @@ class ApplyRevisionsOptions(object):
         :type: list[RevisionInfo]
         """
         self._revisions = revisions
+    
+    @property
+    def accept_all(self):
+        """
+        Gets the accept_all.  # noqa: E501
+
+        Indicates whether to apply all revisions in the document  # noqa: E501
+
+        :return: The accept_all.  # noqa: E501
+        :rtype: bool
+        """
+        return self._accept_all
+
+    @accept_all.setter
+    def accept_all(self, accept_all):
+        """
+        Sets the accept_all.
+
+        Indicates whether to apply all revisions in the document  # noqa: E501
+
+        :param accept_all: The accept_all.  # noqa: E501
+        :type: bool
+        """
+        if accept_all is None:
+            raise ValueError("Invalid value for `accept_all`, must not be `None`")  # noqa: E501
+        self._accept_all = accept_all
+    
+    @property
+    def reject_all(self):
+        """
+        Gets the reject_all.  # noqa: E501
+
+        Indicates whether to reject all revisions in the document  # noqa: E501
+
+        :return: The reject_all.  # noqa: E501
+        :rtype: bool
+        """
+        return self._reject_all
+
+    @reject_all.setter
+    def reject_all(self, reject_all):
+        """
+        Sets the reject_all.
+
+        Indicates whether to reject all revisions in the document  # noqa: E501
+
+        :param reject_all: The reject_all.  # noqa: E501
+        :type: bool
+        """
+        if reject_all is None:
+            raise ValueError("Invalid value for `reject_all`, must not be `None`")  # noqa: E501
+        self._reject_all = reject_all
     
     @property
     def output_path(self):

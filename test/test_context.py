@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="test_context.py">
-#   Copyright (c) 2003-2020 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ import warnings
 import threading
 import six
 
-from groupdocs_comparison_cloud import Configuration, InfoApi, CompareApi, StorageApi, FileApi, FolderApi
+from groupdocs_comparison_cloud import Configuration, InfoApi, CompareApi, ReviewApi, StorageApi, FileApi, FolderApi
 from groupdocs_comparison_cloud import ObjectExistsRequest, UploadFileRequest, DeleteFolderRequest
 from test.test_settings import TestSettings
 from test.test_file import TestFiles
@@ -45,6 +45,7 @@ class TestContext(unittest.TestCase):
 
     info_api = None
     compare_api = None
+    review_api = None
     storage_api = None
     file_api = None
     folder_api = None
@@ -85,6 +86,7 @@ class TestContext(unittest.TestCase):
     def _close_api_thread_pool(self):
         self.info_api.close()
         self.compare_api.close()
+        self.review_api.close()
         self.storage_api.close()
         self.file_api.close()
         self.folder_api.close()
@@ -117,6 +119,7 @@ class TestContext(unittest.TestCase):
             #configuration.debug = True
             self.info_api = InfoApi.from_config(configuration)
             self.compare_api = CompareApi.from_config(configuration)
+            self.review_api = ReviewApi.from_config(configuration)
             self.storage_api = StorageApi.from_config(configuration)
             self.file_api = FileApi.from_config(configuration)
             self.folder_api = FolderApi.from_config(configuration)

@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="test_file.py">
-#   Copyright (c) 2003-2020 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,6 +57,7 @@ class TestFiles:
     SourceSlide = TestFile("source.pptx", "source_files\\slide\\")
     SourceText = TestFile("source.txt", "source_files\\text\\")
     SourceWord = TestFile("source.docx", "source_files\\word\\")
+    SourceWithRevs = TestFile("source_with_revs.docx", "source_files\\word\\")
 
     SourceCellProtected = TestFile("source_protected.xlsx", "source_files\\cell\\", "1231")
     SourceNoteProtected = TestFile("source_protected.one", "source_files\\note\\", "123")
@@ -104,6 +105,7 @@ class TestFiles:
                 cls.SourceSlide,
                 cls.SourceText,
                 cls.SourceWord,
+                cls.SourceWithRevs,
                 cls.SourceCellProtected,
                 cls.SourceNoteProtected,
                 cls.SourcePdfProtected,
