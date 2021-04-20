@@ -29,7 +29,9 @@ from __future__ import absolute_import
 
 import unittest
 
+from groupdocs_comparison_cloud import *
 from test.test_context import TestContext
+from test.test_file import TestFile, TestFiles
 
 class TestComparisonFormatsApi(TestContext):
     """ComparisonApi unit tests"""
@@ -45,6 +47,19 @@ class TestComparisonFormatsApi(TestContext):
         for format in data.formats:
             self.assertFalse(format.file_format == "")
             self.assertFalse(format.extension == "")
+
+    def test_get_info_returns_file_not_found(self):
+        file_info = TestFiles.NotExist.ToFileInfo()
+        request = GetDocumentInfoRequest(file_info)
+        with self.assertRaises(ApiException) as context:
+            self.info_api.get_document_info(request)
+        self.assertEqual("Can't find file located at 'somefolder\\not-exist.docx'.", context.exception.message)
+
+    def test_get_info(self):
+        file_info = TestFiles.SourceWord.ToFileInfo()
+        request = GetDocumentInfoRequest(file_info)
+        data = self.info_api.get_document_info(request)
+        self.assertEqual(1, data.page_count)
 
 if __name__ == '__main__':
     unittest.main()

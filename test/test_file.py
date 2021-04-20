@@ -92,6 +92,8 @@ class TestFiles:
     TargetWord1Protected = TestFile("target_1_protected.docx", "target_files\\word\\", "5784")
     TargetWord2Protected = TestFile("target_2_protected.docx", "target_files\\word\\", "5784")
 
+    NotExist = TestFile("not-exist.docx", "somefolder\\")
+
     @classmethod
     def get_test_files(cls):
         return [

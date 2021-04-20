@@ -6,7 +6,7 @@ import datetime
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "groupdocs-comparison-cloud"
-VERSION = "21.3"
+VERSION = "21.3.1"
 
 # Append current time to the version when publishing to test environment
 if "--test" in sys.argv:
