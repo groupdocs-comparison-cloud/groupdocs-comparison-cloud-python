@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="Format.py">
+# <copyright company="Aspose Pty Ltd" file="ConsumptionResult.py">
 #   Copyright (c) 2003-2022 Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class Format(object):
+class ConsumptionResult(object):
     """
-    File-format
+    Metered license consumption information
     """
 
     """
@@ -43,73 +43,77 @@ class Format(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'extension': 'str',
-        'file_format': 'str'
+        'credit': 'float',
+        'quantity': 'float'
     }
 
     attribute_map = {
-        'extension': 'Extension',
-        'file_format': 'FileFormat'
+        'credit': 'Credit',
+        'quantity': 'Quantity'
     }
 
-    def __init__(self, extension=None, file_format=None, **kwargs):  # noqa: E501
-        """Initializes new instance of Format"""  # noqa: E501
+    def __init__(self, credit=None, quantity=None, **kwargs):  # noqa: E501
+        """Initializes new instance of ConsumptionResult"""  # noqa: E501
 
-        self._extension = None
-        self._file_format = None
+        self._credit = None
+        self._quantity = None
 
-        if extension is not None:
-            self.extension = extension
-        if file_format is not None:
-            self.file_format = file_format
+        if credit is not None:
+            self.credit = credit
+        if quantity is not None:
+            self.quantity = quantity
     
     @property
-    def extension(self):
+    def credit(self):
         """
-        Gets the extension.  # noqa: E501
+        Gets the credit.  # noqa: E501
 
-        File format extension  # noqa: E501
+        Amount of used credits  # noqa: E501
 
-        :return: The extension.  # noqa: E501
-        :rtype: str
+        :return: The credit.  # noqa: E501
+        :rtype: float
         """
-        return self._extension
+        return self._credit
 
-    @extension.setter
-    def extension(self, extension):
+    @credit.setter
+    def credit(self, credit):
         """
-        Sets the extension.
+        Sets the credit.
 
-        File format extension  # noqa: E501
+        Amount of used credits  # noqa: E501
 
-        :param extension: The extension.  # noqa: E501
-        :type: str
+        :param credit: The credit.  # noqa: E501
+        :type: float
         """
-        self._extension = extension
+        if credit is None:
+            raise ValueError("Invalid value for `credit`, must not be `None`")  # noqa: E501
+        self._credit = credit
     
     @property
-    def file_format(self):
+    def quantity(self):
         """
-        Gets the file_format.  # noqa: E501
+        Gets the quantity.  # noqa: E501
 
-        File format name  # noqa: E501
+        Amount of MBs processed  # noqa: E501
 
-        :return: The file_format.  # noqa: E501
-        :rtype: str
+        :return: The quantity.  # noqa: E501
+        :rtype: float
         """
-        return self._file_format
+        return self._quantity
 
-    @file_format.setter
-    def file_format(self, file_format):
+    @quantity.setter
+    def quantity(self, quantity):
         """
-        Sets the file_format.
+        Sets the quantity.
 
-        File format name  # noqa: E501
+        Amount of MBs processed  # noqa: E501
 
-        :param file_format: The file_format.  # noqa: E501
-        :type: str
+        :param quantity: The quantity.  # noqa: E501
+        :type: float
         """
-        self._file_format = file_format
+        if quantity is None:
+            raise ValueError("Invalid value for `quantity`, must not be `None`")  # noqa: E501
+        self._quantity = quantity
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -145,7 +149,7 @@ class Format(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Format):
+        if not isinstance(other, ConsumptionResult):
             return False
 
         return self.__dict__ == other.__dict__

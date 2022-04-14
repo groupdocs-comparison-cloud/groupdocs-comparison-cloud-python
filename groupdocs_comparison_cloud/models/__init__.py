@@ -7,6 +7,7 @@ from __future__ import absolute_import
 from groupdocs_comparison_cloud.models.apply_revisions_options import ApplyRevisionsOptions
 from groupdocs_comparison_cloud.models.change_info import ChangeInfo
 from groupdocs_comparison_cloud.models.comparison_options import ComparisonOptions
+from groupdocs_comparison_cloud.models.consumption_result import ConsumptionResult
 from groupdocs_comparison_cloud.models.diagram_master_setting import DiagramMasterSetting
 from groupdocs_comparison_cloud.models.disc_usage import DiscUsage
 from groupdocs_comparison_cloud.models.error import Error
