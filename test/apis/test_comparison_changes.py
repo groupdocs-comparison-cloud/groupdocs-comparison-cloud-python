@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd">
-#   Copyright (c) 2003-2022 Aspose Pty Ltd
+#   Copyright (c) 2003-2023 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,7 +54,7 @@ class TestComparisonChanges(TestContext):
     def test_changes_html(self):
         options = self.GetComparisonOptions(TestFiles.SourceHtml, TestFiles.TargetHtml)
         response = self.compare_api.post_changes(PostChangesRequest(options))
-        self.assertEqual(len(response), 3)   
+        self.assertEqual(len(response), 2)   
 
     def test_changes_image(self):
         options = self.GetComparisonOptions(TestFiles.SourceImage, TestFiles.TargetImage)
