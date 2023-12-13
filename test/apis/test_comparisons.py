@@ -61,15 +61,16 @@ class TestComparisons(TestContext):
         response = self.compare_api.comparisons(ComparisonsRequest(options))
         self.assertEqual(response.rel, options.output_path)
 
-    def test_comparisons_note(self):
-        options = self.GetComparisonOptions(TestFiles.SourceNote, TestFiles.TargetNote)
-        response = self.compare_api.comparisons(ComparisonsRequest(options))
-        self.assertEqual(response.rel, options.output_path)
+    # Not supported in linux
+    # def test_comparisons_note(self):
+    #     options = self.GetComparisonOptions(TestFiles.SourceNote, TestFiles.TargetNote)
+    #     response = self.compare_api.comparisons(ComparisonsRequest(options))
+    #     self.assertEqual(response.rel, options.output_path)
 
-    def test_comparisons_note_protected(self):
-        options = self.GetComparisonOptions(TestFiles.SourceNoteProtected, TestFiles.TargetNoteProtected)
-        response = self.compare_api.comparisons(ComparisonsRequest(options))
-        self.assertEqual(response.rel, options.output_path)
+    # def test_comparisons_note_protected(self):
+    #     options = self.GetComparisonOptions(TestFiles.SourceNoteProtected, TestFiles.TargetNoteProtected)
+    #     response = self.compare_api.comparisons(ComparisonsRequest(options))
+    #     self.assertEqual(response.rel, options.output_path)
 
     def test_comparisons_pdf(self):
         options = self.GetComparisonOptions(TestFiles.SourcePdf, TestFiles.TargetPdf)

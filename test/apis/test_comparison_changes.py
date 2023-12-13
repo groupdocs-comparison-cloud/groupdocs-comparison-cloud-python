@@ -61,15 +61,16 @@ class TestComparisonChanges(TestContext):
         response = self.compare_api.post_changes(PostChangesRequest(options))
         self.assertEqual(len(response), 170)   
 
-    def test_changes_note(self):
-        options = self.GetComparisonOptions(TestFiles.SourceNote, TestFiles.TargetNote)
-        response = self.compare_api.post_changes(PostChangesRequest(options))
-        self.assertEqual(len(response), 12)   
+    # Not supported in linux
+    # def test_changes_note(self):
+    #     options = self.GetComparisonOptions(TestFiles.SourceNote, TestFiles.TargetNote)
+    #     response = self.compare_api.post_changes(PostChangesRequest(options))
+    #     self.assertEqual(len(response), 12)   
 
-    def test_changes_note_protected(self):
-        options = self.GetComparisonOptions(TestFiles.SourceNoteProtected, TestFiles.TargetNoteProtected)
-        response = self.compare_api.post_changes(PostChangesRequest(options))
-        self.assertEqual(len(response), 12)          
+    # def test_changes_note_protected(self):
+    #     options = self.GetComparisonOptions(TestFiles.SourceNoteProtected, TestFiles.TargetNoteProtected)
+    #     response = self.compare_api.post_changes(PostChangesRequest(options))
+    #     self.assertEqual(len(response), 12)          
 
     def test_changes_pdf(self):
         options = self.GetComparisonOptions(TestFiles.SourcePdf, TestFiles.TargetPdf)

@@ -61,15 +61,16 @@ class TestComparisonUpdates(TestContext):
         response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
         self.assertEqual(response.rel, options.output_path)
 
-    def test_updates_note(self):
-        options = self.GetComparisonOptionsUpdates(TestFiles.SourceNote, TestFiles.TargetNote)
-        response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.rel, options.output_path)
+    # Not supported in linux
+    # def test_updates_note(self):
+    #     options = self.GetComparisonOptionsUpdates(TestFiles.SourceNote, TestFiles.TargetNote)
+    #     response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
+    #     self.assertEqual(response.rel, options.output_path)
 
-    def test_updates_note_protected(self):
-        options = self.GetComparisonOptionsUpdates(TestFiles.SourceNoteProtected, TestFiles.TargetNoteProtected)
-        response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
-        self.assertEqual(response.rel, options.output_path)
+    # def test_updates_note_protected(self):
+    #     options = self.GetComparisonOptionsUpdates(TestFiles.SourceNoteProtected, TestFiles.TargetNoteProtected)
+    #     response = self.compare_api.put_changes_document(PutChangesDocumentRequest(options))
+    #     self.assertEqual(response.rel, options.output_path)
 
     def test_updates_pdf(self):
         options = self.GetComparisonOptionsUpdates(TestFiles.SourcePdf, TestFiles.TargetPdf)
