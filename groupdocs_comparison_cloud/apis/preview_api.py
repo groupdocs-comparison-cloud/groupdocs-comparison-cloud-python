@@ -37,7 +37,7 @@ from groupdocs_comparison_cloud.api_client import ApiClient
 from groupdocs_comparison_cloud.api_exception import ApiException
 from groupdocs_comparison_cloud.configuration import Configuration
 
-class InfoApi(object):
+class PreviewApi(object):
     """
     GroupDocs.Comparison Cloud API
 
@@ -55,7 +55,7 @@ class InfoApi(object):
         """
         Closes thread pool. This method should be called when 
         methods are executed asynchronously (is_async=True is passed as parameter)
-        and this instance of InfoApi is not going to be used any more.
+        and this instance of PreviewApi is not going to be used any more.
         """
         if self.api_client is not None:
             if(self.api_client.pool is not None):
@@ -66,52 +66,52 @@ class InfoApi(object):
     @classmethod
     def from_keys(cls, app_sid, app_key):
         """
-        Initializes new instance of InfoApi with API keys
+        Initializes new instance of PreviewApi with API keys
 
         :param app_sid Application identifier (App SID)
         :param app_key Application private key (App Key)
         """
         configuration = Configuration(app_sid, app_key)
-        return InfoApi(configuration)
+        return PreviewApi(configuration)
 
     @classmethod
     def from_config(cls, configuration):
         """
-        Initializes new instance of InfoApi with configuration options
+        Initializes new instance of PreviewApi with configuration options
 
         :param configuration API configuration
         """
-        return InfoApi(configuration)
+        return PreviewApi(configuration)
 
-    def get_document_info(self, request,**kwargs):  # noqa: E501
-        """Gets document information  # noqa: E501
+    def preview(self, request,**kwargs):  # noqa: E501
+        """Creates a preview images of document pages and returns an array of links to saved result  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param FileInfo file_info: (required)
-        :return: InfoResult
+        :param PreviewOptions preview_options: Preview options (required)
+        :return: list[Link]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
 
         if kwargs.get('is_async'):
-            return self._get_document_info_with_http_info(request, **kwargs)  # noqa: E501
+            return self._preview_with_http_info(request, **kwargs)  # noqa: E501
         
-        (data) = self._get_document_info_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self._preview_with_http_info(request, **kwargs)  # noqa: E501
         return data
 
-    def _get_document_info_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets document information  # noqa: E501
+    def _preview_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Creates a preview images of document pages and returns an array of links to saved result  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentInfoRequest request object with parameters
-        :return: InfoResult
+        :param PreviewRequest request object with parameters
+        :return: list[Link]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -124,16 +124,16 @@ class InfoApi(object):
             if key not in params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_document_info" % key
+                    " to method preview" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'file_info' is set
-        if request.file_info is None:
-            raise ValueError("Missing the required parameter `file_info` when calling `get_document_info`")  # noqa: E501
+        # verify the required parameter 'preview_options' is set
+        if request.preview_options is None:
+            raise ValueError("Missing the required parameter `preview_options` when calling `preview`")  # noqa: E501
 
         collection_formats = {}
-        path = '/comparison/info'
+        path = '/comparison/preview'
         path_params = {}
 
         query_params = []
@@ -144,8 +144,8 @@ class InfoApi(object):
         local_var_files = []
 
         body_params = None
-        if request.file_info is not None:
-            body_params = request.file_info
+        if request.preview_options is not None:
+            body_params = request.preview_options
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -163,92 +163,7 @@ class InfoApi(object):
             'body':body_params,
             'post_params':form_params,
             'files':local_var_files,
-            'response_type':'InfoResult',  # noqa: E501
-            'auth_settings':self.auth.get_auth_settings(),
-            'is_async':params.get('is_async'),
-            '_return_http_data_only':params.get('_return_http_data_only'),
-            '_preload_content':params.get('_preload_content', True),
-            '_request_timeout':params.get('_request_timeout'),
-            'collection_formats':collection_formats
-        }
-
-        return self.api_client.call_api(**call_kwargs)  # noqa: E501
-
-    def get_supported_file_formats(self, **kwargs):  # noqa: E501
-        """Retrieves supported file formats list   # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-
-        :param is_async bool
-        :return: FormatsResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-
-        if kwargs.get('is_async'):
-            return self._get_supported_file_formats_with_http_info(**kwargs)  # noqa: E501
-        
-        (data) = self._get_supported_file_formats_with_http_info(**kwargs)  # noqa: E501
-        return data
-
-    def _get_supported_file_formats_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieves supported file formats list   # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-
-        :param is_async bool
-        
-        :return: FormatsResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        params = locals()
-        params['is_async'] = ''
-        params['_return_http_data_only'] = False
-        params['_preload_content'] = True
-        params['_request_timeout'] = ''
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_supported_file_formats" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-        path = '/comparison/formats'
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        call_kwargs = {
-            'resource_path':path, 
-            'method':'GET',
-            'path_params':path_params,
-            'query_params':query_params,
-            'header_params':header_params,
-            'body':body_params,
-            'post_params':form_params,
-            'files':local_var_files,
-            'response_type':'FormatsResult',  # noqa: E501
+            'response_type':'list[Link]',  # noqa: E501
             'auth_settings':self.auth.get_auth_settings(),
             'is_async':params.get('is_async'),
             '_return_http_data_only':params.get('_return_http_data_only'),
@@ -268,7 +183,7 @@ class InfoApi(object):
 # coding: utf-8
 
 # --------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="get_document_info_request.py">
+# <copyright company="Aspose Pty Ltd" file="preview_request.py">
 #   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -292,12 +207,12 @@ class InfoApi(object):
 # </summary>
 # --------------------------------------------------------------------------------
 
-class GetDocumentInfoRequest(object):
+class PreviewRequest(object):
     """
-    Request model for get_document_info operation.
-    :param file_info 
+    Request model for preview operation.
+    :param preview_options Preview options
     """
 
-    def __init__(self, file_info):
-        """Initializes new instance of GetDocumentInfoRequest."""  # noqa: E501
-        self.file_info = file_info
+    def __init__(self, preview_options):
+        """Initializes new instance of PreviewRequest."""  # noqa: E501
+        self.preview_options = preview_options

@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="comparison_api.py">
-#   Copyright (c) 2003-2024 Aspose Pty Ltd
+#   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -366,7 +366,7 @@ class CompareApi(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="comparisons_request.py">
-#   Copyright (c) 2003-2024 Aspose Pty Ltd
+#   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -402,7 +402,7 @@ class ComparisonsRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="post_changes_request.py">
-#   Copyright (c) 2003-2024 Aspose Pty Ltd
+#   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -438,7 +438,7 @@ class PostChangesRequest(object):
 
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="put_changes_document_request.py">
-#   Copyright (c) 2003-2024 Aspose Pty Ltd
+#   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy

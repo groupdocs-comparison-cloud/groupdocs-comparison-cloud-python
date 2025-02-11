@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose Pty Ltd" file="PageInfo.py">
+# <copyright company="Aspose Pty Ltd" file="PreviewOptions.py">
 #   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
@@ -30,9 +30,9 @@ import re  # noqa: F401
 
 import six
 
-class PageInfo(object):
+class PreviewOptions(object):
     """
-    Represents information about page
+    Defines preview options
     """
 
     """
@@ -43,37 +43,134 @@ class PageInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'file_info': 'FileInfo',
+        'format': 'str',
+        'output_folder': 'str',
         'width': 'int',
         'height': 'int',
-        'page_number': 'int'
+        'page_numbers': 'list[int]'
     }
 
     attribute_map = {
+        'file_info': 'FileInfo',
+        'format': 'Format',
+        'output_folder': 'OutputFolder',
         'width': 'Width',
         'height': 'Height',
-        'page_number': 'PageNumber'
+        'page_numbers': 'PageNumbers'
     }
 
-    def __init__(self, width=None, height=None, page_number=None, **kwargs):  # noqa: E501
-        """Initializes new instance of PageInfo"""  # noqa: E501
+    def __init__(self, file_info=None, format=None, output_folder=None, width=None, height=None, page_numbers=None, **kwargs):  # noqa: E501
+        """Initializes new instance of PreviewOptions"""  # noqa: E501
 
+        self._file_info = None
+        self._format = None
+        self._output_folder = None
         self._width = None
         self._height = None
-        self._page_number = None
+        self._page_numbers = None
 
+        if file_info is not None:
+            self.file_info = file_info
+        if format is not None:
+            self.format = format
+        if output_folder is not None:
+            self.output_folder = output_folder
         if width is not None:
             self.width = width
         if height is not None:
             self.height = height
-        if page_number is not None:
-            self.page_number = page_number
+        if page_numbers is not None:
+            self.page_numbers = page_numbers
+    
+    @property
+    def file_info(self):
+        """
+        Gets the file_info.  # noqa: E501
+
+        Input file info  # noqa: E501
+
+        :return: The file_info.  # noqa: E501
+        :rtype: FileInfo
+        """
+        return self._file_info
+
+    @file_info.setter
+    def file_info(self, file_info):
+        """
+        Sets the file_info.
+
+        Input file info  # noqa: E501
+
+        :param file_info: The file_info.  # noqa: E501
+        :type: FileInfo
+        """
+        self._file_info = file_info
+    
+    @property
+    def format(self):
+        """
+        Gets the format.  # noqa: E501
+
+        Preview image format  # noqa: E501
+
+        :return: The format.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """
+        Sets the format.
+
+        Preview image format  # noqa: E501
+
+        :param format: The format.  # noqa: E501
+        :type: str
+        """
+        if format is None:
+            raise ValueError("Invalid value for `format`, must not be `None`")  # noqa: E501
+        allowed_values = ["Jpeg", "Png", "Bmp"]  # noqa: E501
+        if not format.isdigit():	
+            if format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501
+                    .format(format, allowed_values))
+            self._format = format
+        else:
+            self._format = allowed_values[int(format) if six.PY3 else long(format)]
+    
+    @property
+    def output_folder(self):
+        """
+        Gets the output_folder.  # noqa: E501
+
+        Path to folder with preview results  # noqa: E501
+
+        :return: The output_folder.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_folder
+
+    @output_folder.setter
+    def output_folder(self, output_folder):
+        """
+        Sets the output_folder.
+
+        Path to folder with preview results  # noqa: E501
+
+        :param output_folder: The output_folder.  # noqa: E501
+        :type: str
+        """
+        self._output_folder = output_folder
     
     @property
     def width(self):
         """
         Gets the width.  # noqa: E501
 
-        Page width  # noqa: E501
+        Preview width  # noqa: E501
 
         :return: The width.  # noqa: E501
         :rtype: int
@@ -85,7 +182,7 @@ class PageInfo(object):
         """
         Sets the width.
 
-        Page width  # noqa: E501
+        Preview width  # noqa: E501
 
         :param width: The width.  # noqa: E501
         :type: int
@@ -99,7 +196,7 @@ class PageInfo(object):
         """
         Gets the height.  # noqa: E501
 
-        Page height  # noqa: E501
+        Preview height  # noqa: E501
 
         :return: The height.  # noqa: E501
         :rtype: int
@@ -111,7 +208,7 @@ class PageInfo(object):
         """
         Sets the height.
 
-        Page height  # noqa: E501
+        Preview height  # noqa: E501
 
         :param height: The height.  # noqa: E501
         :type: int
@@ -121,30 +218,28 @@ class PageInfo(object):
         self._height = height
     
     @property
-    def page_number(self):
+    def page_numbers(self):
         """
-        Gets the page_number.  # noqa: E501
+        Gets the page_numbers.  # noqa: E501
 
-        Page number  # noqa: E501
+        Page numbers that will be previewed.  # noqa: E501
 
-        :return: The page_number.  # noqa: E501
-        :rtype: int
+        :return: The page_numbers.  # noqa: E501
+        :rtype: list[int]
         """
-        return self._page_number
+        return self._page_numbers
 
-    @page_number.setter
-    def page_number(self, page_number):
+    @page_numbers.setter
+    def page_numbers(self, page_numbers):
         """
-        Sets the page_number.
+        Sets the page_numbers.
 
-        Page number  # noqa: E501
+        Page numbers that will be previewed.  # noqa: E501
 
-        :param page_number: The page_number.  # noqa: E501
-        :type: int
+        :param page_numbers: The page_numbers.  # noqa: E501
+        :type: list[int]
         """
-        if page_number is None:
-            raise ValueError("Invalid value for `page_number`, must not be `None`")  # noqa: E501
-        self._page_number = page_number
+        self._page_numbers = page_numbers
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -180,7 +275,7 @@ class PageInfo(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PageInfo):
+        if not isinstance(other, PreviewOptions):
             return False
 
         return self.__dict__ == other.__dict__
