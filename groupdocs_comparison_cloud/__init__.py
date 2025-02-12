@@ -9,6 +9,7 @@ from groupdocs_comparison_cloud.apis.folder_api import FolderApi, CopyFolderRequ
 from groupdocs_comparison_cloud.apis.info_api import InfoApi, GetDocumentInfoRequest
 from groupdocs_comparison_cloud.apis.storage_api import StorageApi, GetDiscUsageRequest, GetFileVersionsRequest, ObjectExistsRequest, StorageExistsRequest
 from groupdocs_comparison_cloud.apis.review_api import ReviewApi, GetRevisionsRequest, ApplyRevisionsRequest
+from groupdocs_comparison_cloud.apis.preview_api import PreviewApi, PreviewRequest
 
 # import related types
 from groupdocs_comparison_cloud.auth import Auth
@@ -20,6 +21,7 @@ from groupdocs_comparison_cloud.configuration import Configuration
 from groupdocs_comparison_cloud.models.apply_revisions_options import ApplyRevisionsOptions
 from groupdocs_comparison_cloud.models.change_info import ChangeInfo
 from groupdocs_comparison_cloud.models.comparison_options import ComparisonOptions
+from groupdocs_comparison_cloud.models.consumption_result import ConsumptionResult
 from groupdocs_comparison_cloud.models.diagram_master_setting import DiagramMasterSetting
 from groupdocs_comparison_cloud.models.disc_usage import DiscUsage
 from groupdocs_comparison_cloud.models.error import Error
@@ -36,6 +38,7 @@ from groupdocs_comparison_cloud.models.link import Link
 from groupdocs_comparison_cloud.models.metadata import Metadata
 from groupdocs_comparison_cloud.models.object_exist import ObjectExist
 from groupdocs_comparison_cloud.models.page_info import PageInfo
+from groupdocs_comparison_cloud.models.preview_options import PreviewOptions
 from groupdocs_comparison_cloud.models.rectangle import Rectangle
 from groupdocs_comparison_cloud.models.revision_info import RevisionInfo
 from groupdocs_comparison_cloud.models.settings import Settings
